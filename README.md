@@ -13,7 +13,7 @@
 #python manage.py migrate
 #python manage.py createsuperuser
 
-#Authentication email,and password (user,adminuser--sellperperty)
+#Authentication email,and password (user,adminuser--sellperperty).
 #different port for adminuser who for selling, and user port for buying
 #Authentication is a token based
 #Smt can add (for authentication)
