@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Tenant Profile</h2>
+  
+  <h3>Personal Information</h3>
+  <p><strong>Name:</strong> {{ tenant.name }}</p>
+  <p><strong>Address:</strong> {{ tenant.address }}</p>
+  <p><strong>Document Proofs:</strong> {{ tenant.document_proofs }}</p>
+  
+  {% if rental_info %}
+    <h3>Rental Information</h3>
+    <p><strong>Agreement End Date:</strong> {{ rental_info.agreement_end_date }}</p>
+    <p><strong>Monthly Rent Date:</strong> {{ rental_info.monthly_rent_date }}</p>
+  {% else %}
+    <p>No rental information available for this tenant.</p>
+  {% endif %}
+  
+{% endblock %}

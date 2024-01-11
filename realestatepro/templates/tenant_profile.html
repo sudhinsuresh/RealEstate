@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Assign Tenant to Unit</h2>
+  <div class="container">
+    <form method="post" action="{% url 'assign_tenant_unit' %}">
+        {% csrf_token %}
+        
+        <div class="form-group">
+          <label for="property">Select Property:</label>
+          <select class="form-control" name="property" id="property">
+            {% for property in properties %}
+              <option value="{{ property.id }}">{{ property.name }} - {{ property.address }}</option>
+            {% endfor %}
+          </select>
+        </div><br>
+    
+        <div class="form-group">
+          <label for="unit_number">Unit Number:</label>
+          <input type="text" class="form-control" name="unit_number" required>
+        </div><br>
+    
+        <div class="form-group">
+          <label for="rent_cost">Rent Cost:</label>
+          <input type="text" class="form-control" name="rent_cost" required>
+        </div><br>
+    
+        <div class="form-group">
+          <label for="unit_type">Unit Type:</label>
+          <select class="form-control" name="unit_type" id="unit_type">
+            <option value="1BHK">1BHK</option>
+            <option value="2BHK">2BHK</option>
+            <option value="3BHK">3BHK</option>
+            <option value="4BHK">4BHK</option>
+          </select>
+        </div><br>
+    
+        <div class="form-group">
+          <label for="tenant">Select Tenant:</label>
+          <select class="form-control" name="tenant" id="tenant">
+            {% for tenant in tenants %}
+              <option value="{{ tenant.id }}">{{ tenant.name }}</option>
+            {% endfor %}
+          </select>
+        </div><br>
+    
+        <div class="form-group">
+          <label for="agreement_end_date">Agreement End Date:</label>
+          <input type="date" class="form-control" name="agreement_end_date" required>
+        </div><br>
+    
+        <div class="form-group">
+          <label for="monthly_rent_date">Monthly Rent Date:</label>
+          <input type="number" class="form-control" name="monthly_rent_date" required>
+        </div><br>
+    
+        <button type="submit" class="btn btn-primary">Assign Tenant</button>
+      </form>
+  </div>
+{% endblock %}

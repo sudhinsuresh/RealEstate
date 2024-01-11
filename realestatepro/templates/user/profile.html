@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dropdown-center">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Profile Information
+  </button>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="{% url 'addprofile' %}">Add details</a></li>
+      <li><a class="dropdown-item" href="{% url 'profiledetails'  %}">Profile view</a></li>
+      
+      <td><a href="{% url 'tenantprofile' id=1  %}">Teanant Profile</a></td>
+      
+
+      
+      
+
+
+  </ul>
+</div>
+
+  
+A real estate website serves as a comprehensive online platform designed to facilitate property transactions, connect buyers and sellers, and provide valuable information to individuals interested in real estate. These websites have become indispensable tools in the real estate industry, offering a wide range of features and functionalities to enhance the overall property-buying experience.
+
+At the core of a real estate website is a robust property listing module. This module allows users to explore a diverse array of properties, including residential, commercial, and industrial spaces. Each property is typically accompanied by detailed information, such as property name, address, location, features, and unit details. Users can filter and search for properties based on specific criteria, such as property type, location, price range, and amenities, enabling a tailored search experience.
+
+Additionally, real estate websites often incorporate interactive maps to provide a visual representation of property locations. This feature assists users in gaining a better understanding of the surrounding neighborhood and proximity to essential amenities.
+
+The functionality of a real estate website extends beyond property listings. Many platforms include tools for mortgage calculators, virtual property tours, and real-time chat support to enhance user engagement. Integration with geolocation services allows users to explore properties in their preferred areas actively.
+
+For sellers and real estate professionals, these websites provide a platform to showcase their properties to a broad audience, increasing visibility and potential leads. Online forms and contact options simplify communication between buyers, sellers, and real estate agents.
+
+{% endblock content %}

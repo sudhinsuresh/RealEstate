@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="section">
+  <!-- Existing code for Popular Properties -->
+
+  <!-- Display search results -->
+  {% if units or properties %}
+  <h2 class="font-weight-bold text-primary heading">Search Results</h2>
+  <div class="row">
+    {% for property in properties %}
+    <div class="col-12">
+      <div class="property-item">
+        <!-- Display property information -->
+        <a href="{% url 'property_details' property.id %}" class="img">
+          <img src="{{ property.image.url }}" alt="Image" class="img-fluid" />
+        </a>
+        <div class="property-content">
+          <div class="price mb-2"><span>{{ property.price }}</span></div>
+          <div>
+            <span class="d-block mb-2 text-black-50">{{ property.address }}</span>
+            <span class="city d-block mb-3">{{ property.name }}</span>
+            <div class="specs d-flex mb-4">
+              <span class="d-block d-flex align-items-center me-3">
+                <span class="icon-bed me-2"></span>
+                <span class="caption">{{ property.features }}</span>
+              </span>
+            </div>
+            <a href="{% url 'property_details' property.id %}" class="btn btn-primary py-2 px-3">See details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Existing code for Features Section -->
+</div>
+{% endblock content %}

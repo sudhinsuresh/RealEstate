@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <h1 data-aos="fade-up">Sell Property</h1>
+<div class="container" data-aos="fade-up" data-aos-delay="400">
+</div>
+<form action="/sellproperty/" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <label for="Name">Name</label>
+    <div class="form-group">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Property Name" required>
+    </div>
+    <label for="address">Address</label>
+    <div class="form-group">
+        <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+    </div>
+    <label for="location">Lcation</label>
+    <div class="form-group">
+        <input type="text" class="form-control" id="location" name="location" placeholder="location" required>
+    </div>
+    <label for="features">Features</label>
+    <div class="form-group">
+        <input type="text" class="form-control" id="features" name="features" placeholder="Features" required>
+    </div>
+    <label for="image">Image</label>
+    <div class="form-group">
+        <input type="file" class="form-control" id="image" name="image" placeholder="image" accept="image/*" required>
+    </div>
+    <label for="price">Image</label>
+    <div class="form-group">
+        <input type="text" class="form-control" id="price" name="price" placeholder="price"  required>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary">Sell</button>
+    <br>
+    <h1 data-aos="fade-up" >Tenant-unit</h1>
+    <br>
+    Adding Tenant<a href="/assigntenantunit/">Add</a>
+    <br>
+</form>
+</div>
+  
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+  
+{% endblock content %}

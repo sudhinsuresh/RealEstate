@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-8">
+    <h2 class="text-white bg-dark text-center p-3"> Profile Details</h2>
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">id_proof</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for d in profile %}
+            <tr>
+            
+            <td>{{d.name}}</td>
+            <td>{{d.address}}</td>
+            <td>{{d.document_proofs}}</td>
+    
+            </tr>
+            {% endfor %}
+          
+        </tbody>
+      </table>
+
+</div>
+  
+{% endblock content %}
