@@ -17,6 +17,7 @@
 #different port for adminuser who for selling, and user port for buying
 #Authentication is a token based
 #Smt can add (for authentication)
+#user can search the property by the features
 
 
 #not commpeleted exactly
